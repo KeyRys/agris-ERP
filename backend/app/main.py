@@ -1,12 +1,13 @@
 import psycopg2
 from dotenv import load_dotenv
 import os
-DATABASE_URL = os.getenv("DATABASE_URL")
-
-from fastapi import FastAPI
 
 # Load environment variables from .env
 load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+from fastapi import FastAPI
 
 app = FastAPI(
     title="Agris ERP",
@@ -36,7 +37,7 @@ def db_test():
         print("Success: FastAPI is connected to the Supabase database!")
         conn.close()
         return True
-    except OperationalError as e:
+    except RuntimeError as e:
         # If connection fails
         print(f"Error: Database connection failed. Details: {e}")
         return False

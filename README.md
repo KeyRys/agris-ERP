@@ -1,6 +1,6 @@
 # AgroLogix ERP
 
-AgroLogix is a backend-first ERP system designed to model an agribusiness
+AgroLogix is a backend ERP system designed to model an agribusiness
 operation with production, inventory, logistics, and accounting.
 
 ## Scope
@@ -23,6 +23,11 @@ operation with production, inventory, logistics, and accounting.
 Simulation consumes the ERP.
 ERP does not depend on simulation.
 Accounting is authoritative.
+
+### Chart of Accounts
+
+The chart of accounts is stored in supabase and seeded from code.
+Accounts must never be created manually via the database UI.
 
 ## Status
 
